@@ -6,7 +6,9 @@
       </colgroup>
       <thead>
         <tr>
-          <th></th>
+          <th v-for="(column, index) in columns" :key="'th'+index">
+            {{column.title}}
+          </th>
         </tr>
       </thead>
     </table>
@@ -14,7 +16,12 @@
 </template>
 <script>
 export default {
-  name: 'table-header'
+  name: 'table-header',
+  props: {
+    columns: {
+      type: Array
+    }
+  }
 }
 </script>
 <style scoped>
