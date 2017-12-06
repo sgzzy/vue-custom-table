@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+  text-align: left;
+  font-size: 0.3rem;
+  border-bottom: 1px solid #999;
+  border-right: none;
+  border-left: none;
+}
+
+table td {
+  border-top: 1px solid #999;
+  min-width: 50px;
+  line-height: 2;
+}
+
+.vue-custom-table-body table tr:first-of-type td {
+  border-top: none;
+}
+
+.vue-custom-table-body {
+  overflow: hidden;
+}
