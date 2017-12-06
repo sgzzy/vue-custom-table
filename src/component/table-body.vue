@@ -28,7 +28,7 @@ export default {
     this.$emit('align',this.align());
   },
   methods: {
-    align: function() {
+    align: function() { // thead和tbody对齐
       let firstTr = document.querySelectorAll(".vue-custom-table-body > table > tbody > tr:first-of-type td");
       firstTr = Array.prototype.slice.apply(firstTr);
       let columns = [];
