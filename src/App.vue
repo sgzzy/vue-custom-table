@@ -17,7 +17,8 @@ export default {
   }
 };
 </script>
-<style scoped>
 
+<style scoped>
+  @import './styles/table.css';
 </style>
 

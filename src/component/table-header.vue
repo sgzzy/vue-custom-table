@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="vue-custom-table-header">
     <table>
       <colgroup>
-          <col v-for="(column, index) in columns" :key="index" :width="column.width"></col>
+          <col v-for="(width, index) in columnsWidth" :key="index" :width="width"></col>
       </colgroup>
       <thead>
         <tr>
@@ -18,8 +18,12 @@
 export default {
   name: 'table-header',
   props: {
-    columns: {
-      type: Array
+    columns: Array,
+    columnsWidth: Array
+  },
+  data: function() {
+    return {
+
     }
   }
 }

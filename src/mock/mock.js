@@ -1,20 +1,20 @@
-thead = [
+var thead = [
   {
-    title: "Name",
+    title: "用户姓名",
     key: "name"
   },
   {
-    title: "Age",
+    title: "用户年龄",
     key: "age"
   },
   {
-    title: "Address",
+    title: "用户地址",
     key: "address"
   }
 ];
 
 // thead包含的项data必须包含
-data = [
+var data = [
   {
     name: "John Brown",
     age: 18,
@@ -40,3 +40,5 @@ data = [
     date: "2016-10-04"
   }
 ];
+
+export {thead, data}
