@@ -32,7 +32,6 @@ export default {
       let fontSize = parseInt(window.getComputedStyle(table).fontSize);
       this.columnsMinWidth.push(length * fontSize + 5);
     });
-      console.log("tableBody mounted",this.columnsMinWidth);
     this.$emit("minWidth", this.columnsMinWidth);
     this.$emit("align", this.align());
   },
@@ -54,6 +53,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-
-</style>

@@ -25,29 +25,18 @@ export default {
     height: Number
   },
   data: function() {
-    // columnsMinWidth防止表头换行
     return {
       columnsMinWidth: [],
       columnsWidth: []
     };
   },
-  created() {
-  },
-  mounted() {
-
-  },
   methods: {
     align: function(cloumns) {
       this.columnsWidth = cloumns;
-      console.log("align emit", this.columnsWidth);
     },
     minWidth: function(minWidth) {
       this.columnsMinWidth = minWidth;
-      console.log("minWidth emit", this.columnsMinWidth);
     }
   }
 };
 </script>
-<style scoped>
-
-</style>

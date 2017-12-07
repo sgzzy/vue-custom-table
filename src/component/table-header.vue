@@ -20,15 +20,6 @@ export default {
   props: {
     columns: Array,
     columnsWidth: Array
-  },
-  data: function() {
-    return {};
-  },
-  beforeUpdate() {
-    console.log("header update before", this.columnsWidth);
-  },
-  updated() {
-    // console.log("header updated", this.columnsWidth);
   }
 };
 </script>
