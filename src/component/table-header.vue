@@ -6,7 +6,7 @@
       </colgroup>
       <thead>
         <tr>
-          <th v-for="(column, index) in columns" :key="'th'+index">
+          <th v-for="(column, index) in columns" :key="'th'+index" :class="column.className">
             {{column.title}}
           </th>
         </tr>

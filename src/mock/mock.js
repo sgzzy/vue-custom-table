@@ -1,7 +1,8 @@
 var thead = [
   {
     title: "用户姓名",
-    key: "name"
+    key: "name",
+    className: "user-name"
   },
   {
     title: "用户年龄",
@@ -19,7 +20,10 @@ var data = [
     name: "John Brown",
     age: 18,
     address: "New York No. 1 Lake Park",
-    date: "2016-10-03"
+    date: "2016-10-03",
+    cellClassName: {
+      address: "vue-table-body-address"
+    }
   },
   {
     name: "Jim Green",
