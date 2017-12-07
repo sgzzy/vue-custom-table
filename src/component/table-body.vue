@@ -24,6 +24,16 @@ export default {
     columnsMinWidth: Array
   },
   mounted() {
+    // 设置最小宽度，避免表头换行
+    this.thead.forEach((value, index) => {
+      let length = value.title.length;
+      let table = document.querySelector(".vue-custom-table-body");
+
+      let fontSize = parseInt(window.getComputedStyle(table).fontSize);
+      this.columnsMinWidth.push(length * fontSize + 5);
+    });
+      console.log("tableBody mounted",this.columnsMinWidth);
+    this.$emit("minWidth", this.columnsMinWidth);
     this.$emit("align", this.align());
   },
   methods: {
@@ -36,7 +46,8 @@ export default {
       let columns = [];
       // 获取tbody首行各td的宽度，这里不考虑滚动条
       firstTr.forEach((el, index) => {
-        columns.push(el.offsetWidth);
+        let width = el.offsetWidth < this.columnsMinWidth[index] ? this.columnsMinWidth[index] : el.offsetWidth;
+        columns.push(width);
       });
       return columns;
     }

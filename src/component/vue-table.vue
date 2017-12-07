@@ -1,7 +1,7 @@
 <template>
   <div class="vue-custom-table">
     <table-header :columns="thead" :columnsWidth="columnsWidth"></table-header>
-    <table-body :data="data" :thead="thead" :columnsMinWidth="columnsMinWidth" :columnsWidth="columnsWidth" v-on:align="align" ></table-body>
+    <table-body :data="data" :thead="thead" :columnsMinWidth="columnsMinWidth" :columnsWidth="columnsWidth" v-on:align="align" v-on:minWidth="minWidth"></table-body>
   </div>
 </template>
 <script>
@@ -34,17 +34,16 @@ export default {
   created() {
   },
   mounted() {
-    this.thead.forEach((value, index) => {
-      let length = value.title.length;
-      let table = document.querySelector(".vue-custom-table");
 
-      let fontSize = parseInt(window.getComputedStyle(table).fontSize);
-      this.columnsMinWidth.push(length * fontSize + 5);
-    });
   },
   methods: {
     align: function(cloumns) {
       this.columnsWidth = cloumns;
+      console.log("align emit", this.columnsWidth);
+    },
+    minWidth: function(minWidth) {
+      this.columnsMinWidth = minWidth;
+      console.log("minWidth emit", this.columnsMinWidth);
     }
   }
 };

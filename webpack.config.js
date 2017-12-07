@@ -83,6 +83,5 @@ if (process.env.NODE_ENV === "development") {
       }
     ),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
   ]);
 }

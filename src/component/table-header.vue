@@ -16,18 +16,19 @@
 </template>
 <script>
 export default {
-  name: 'table-header',
+  name: "table-header",
   props: {
     columns: Array,
     columnsWidth: Array
   },
   data: function() {
-    return {
-
-    }
+    return {};
+  },
+  beforeUpdate() {
+    console.log("header update before", this.columnsWidth);
+  },
+  updated() {
+    // console.log("header updated", this.columnsWidth);
   }
-}
+};
 </script>
-<style scoped>
-
-</style>
