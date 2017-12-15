@@ -1,6 +1,7 @@
 <template>
   <div class="vue-custom-table">
     <table-header :columns="thead" :columnsWidth="columnsWidth"></table-header>
+
     <table-body :data="data" :thead="thead" :columnsMinWidth="columnsMinWidth" :columnsWidth="columnsWidth" v-on:align="align" v-on:minWidth="minWidth"></table-body>
   </div>
 </template>
@@ -29,6 +30,9 @@ export default {
       columnsMinWidth: [],
       columnsWidth: []
     };
+  },
+  beforeMount() {
+    console.info("Table beforeMount");
   },
   methods: {
     align: function(cloumns) {

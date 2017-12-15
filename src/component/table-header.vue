@@ -20,6 +20,12 @@ export default {
   props: {
     columns: Array,
     columnsWidth: Array
+  },
+  beforeMount() {
+    console.info("TableHeader beforeMount");
+  },
+  mounted() {
+    console.info("TableHeader mounted");
   }
 };
 </script>
