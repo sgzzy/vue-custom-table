@@ -2,7 +2,7 @@
   <div class="vue-custom-table-header">
     <table>
       <colgroup>
-          <col v-for="(width, index) in columnsWidth" :key="index" :width="width"></col>
+          <col v-for="(width, index) in columnsWidth" :key="index" :width="width">
       </colgroup>
       <thead>
         <tr>

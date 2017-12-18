@@ -2,7 +2,7 @@
   <div class="vue-custom-table">
     <table-header :columns="thead" :columnsWidth="columnsWidth"></table-header>
 
-    <table-body :data="data" :thead="thead" :columnsMinWidth="columnsMinWidth" :columnsWidth="columnsWidth" v-on:align="align" v-on:minWidth="minWidth"></table-body>
+    <table-body :data="datas[curPage]" :thead="thead" :columnsMinWidth="columnsMinWidth" :columnsWidth="columnsWidth" v-on:align="align" v-on:minWidth="minWidth"></table-body>
   </div>
 </template>
 <script>
@@ -15,7 +15,7 @@ export default {
     thead: {
       type: Array
     },
-    data: {
+    datas: {
       type: Array
     },
     isPull: {
@@ -28,7 +28,8 @@ export default {
   data: function() {
     return {
       columnsMinWidth: [],
-      columnsWidth: []
+      columnsWidth: [],
+      curPage: 0,
     };
   },
   beforeMount() {

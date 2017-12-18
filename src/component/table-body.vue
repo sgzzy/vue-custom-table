@@ -2,7 +2,7 @@
   <div class="vue-custom-table-body">
     <table>
       <colgroup>
-        <col v-for="(width, index) in columnsWidth" :key="index" :width="width < columnsMinWidth[index] ? columnsMinWidth[index] : width"></col>
+        <col v-for="(width, index) in columnsWidth" :key="index" :width="width">
       </colgroup>
       <tbody>
         <tr v-for="(item, itemIndex) in data" :key="'tr'+itemIndex">
@@ -30,6 +30,11 @@ export default {
     console.info("TableBody mounted");
     // 设置最小宽度，避免表头换行
     this.setMinWidth();
+  },
+  watch: {
+    data: function(value) {
+      this.$emit("align", this.align());
+    }
   },
   methods: {
     align: function() {

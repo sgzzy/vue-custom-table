@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-custom-table :thead="thead" :data="data"></vue-custom-table>
+    <vue-custom-table :thead="thead" :datas="datas"></vue-custom-table>
   </div>
 </template>
 <script>
@@ -12,7 +12,7 @@ export default {
   data: function() {
     return {
       thead: thead,
-      data: data
+      datas: data
     };
   }
 };
