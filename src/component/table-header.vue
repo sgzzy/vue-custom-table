@@ -1,14 +1,14 @@
 <template>
-  <div class="vue-custom-table-header">
+  <div class="vue-ui-table-header">
     <table>
       <colgroup>
           <col v-for="(width, index) in columnsWidth" :key="index" :width="width">
       </colgroup>
       <thead>
         <tr>
-          <th v-for="(column, index) in columns" :key="'th'+index" :class="column.className">
+          <td v-for="(column, index) in columns" :key="'th'+index" :class="column.className">
             {{column.title}}
-          </th>
+          </td>
         </tr>
       </thead>
     </table>
@@ -20,12 +20,6 @@ export default {
   props: {
     columns: Array,
     columnsWidth: Array
-  },
-  beforeMount() {
-    console.info("TableHeader beforeMount");
-  },
-  mounted() {
-    console.info("TableHeader mounted");
   }
 };
 </script>
