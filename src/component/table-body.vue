@@ -11,7 +11,7 @@
           </td>
         </tr>
       </tbody>
-      <tbody v-if="data.length===0">
+      <tbody v-else>
         <tr>
           <td :colspan="columnsMinWidth.length">暂无记录</td>
         </tr>
@@ -77,6 +77,10 @@ export default {
       });
     },
     align: function() {
+      // 没有数据是不需要对齐
+      // console.log("no data", this.data.length);
+      if(this.data.length===0) return;
+
       // thead和tbody对齐
       let firstTr = document.querySelectorAll(
         ".vue-ui-table-body > table > tbody > tr:first-of-type td"
