@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import UiTable from "../table/vue-table";
+import UiTable from "../vue-table";
 export default {
   name: "record",
   components: { UiTable },
