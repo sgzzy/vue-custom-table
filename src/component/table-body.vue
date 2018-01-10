@@ -7,7 +7,7 @@
       <tbody v-if="!(data.length===0)">
         <tr v-for="(item, itemIndex) in data" :key="'tr'+itemIndex">
           <td v-for="(value, index) in thead" :key="thead[index].key+itemIndex" :class="item.cellClassName ? item.cellClassName[thead[index].key] : ''" style="">
-            {{item[thead[index].key]}}
+            <cell :cloumn="thead[index]" :title="item[thead[index].key]"></cell>
           </td>
         </tr>
       </tbody>
@@ -20,12 +20,15 @@
   </div>
 </template>
 <script>
+import Cell from "./cell.vue";
+
 export default {
   name: "table-body",
   props: {
     data: Array,
     thead: Array
   },
+  components: { Cell },
   data: function() {
     return {
       columnsWidth: [],
